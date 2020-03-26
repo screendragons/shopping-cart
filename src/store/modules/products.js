@@ -3,7 +3,8 @@ import shop from "@/api/shop";
 export default {
     namespaced: true,
     state: {
-        items: []
+        items: [],
+        products: []
     },
 
     getters: {
@@ -22,6 +23,7 @@ export default {
         setProducts (state, products) {
             // update products
             state.products = products
+            console.log(state)
         },
 
         decrementProductInventory (state, product) {
@@ -35,6 +37,7 @@ export default {
                 // make the call
                 // run setProducts mutations
                 shop.getProducts(products => {
+                    console.log(products)
                     commit('setProducts', products)
                     resolve()
                 })
