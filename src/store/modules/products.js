@@ -4,7 +4,6 @@ export default {
     namespaced: true,
     state: {
         items: [],
-        products: []
     },
 
     getters: {
@@ -22,7 +21,7 @@ export default {
     mutations: {
         setProducts (state, products) {
             // update products
-            state.products = products
+            state.items = products
             console.log(state)
         },
 
